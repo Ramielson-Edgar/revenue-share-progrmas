@@ -19,8 +19,9 @@ function updateRangeSlider(el) {
     var portion = (val - min) / (max - min);
     var iel = el.parentNode.querySelector(".range-indicator");
     iel.innerHTML = val + '<span class="range-value"></span>';
-    iel.style.left = portion * (el.offsetWidth - 18) + "px";
-    progress.style.width = (el.value / el.max) * 100 - 3 + "%";
+    iel.style.left = portion * (el.offsetWidth - 15) + "px";
+ 
+    progress.style.width = (el.value / el.max) * 100  + "%";
 
     renderResult(val);
 
@@ -211,7 +212,7 @@ function onHandleACtiveCheckbox(val) {
 }
 
 function renderStartNumber(value) {
-    const inputMin = document.querySelector('.range-input').min
+    const inputMin = document.querySelector('.range-input').value
     const btnCent = document.querySelector(".btn-cent");
 
     document
