@@ -211,7 +211,7 @@ function onHandleACtiveCheckbox(val) {
 
 }
 
-function renderStartNumber(value) {
+function renderStartNumber() {
     const inputMin = document.querySelector('.range-input').value
     const btnCent = document.querySelector(".btn-cent");
 
