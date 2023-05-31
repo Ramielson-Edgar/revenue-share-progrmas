@@ -371,7 +371,7 @@ img {
 
 .partner-program-hero__img-container .hero-icons {
     position: absolute;
-    bottom: 0;
+    bottom: 80px;
     left: 0;
 }
 
@@ -696,12 +696,13 @@ input[type=range]::-webkit-slider-thumb {
 
 
 .range-result {
+ 
     display: grid;
-    grid-template-columns: auto 300px auto;
-    gap: 100px;
+    grid-template-columns: auto 350px auto;
+    column-gap: 100px;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
 
     border: 1px solid #DBDBDB;
     padding: 18px 50px;
@@ -768,7 +769,6 @@ input[type=range]::-webkit-slider-thumb {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 50px;
-
 }
 
 

@@ -13,15 +13,17 @@ const radios = document.querySelectorAll('input[name="value"]');
 
 function updateRangeSlider(el) {
     var val = el.value;
+    console.log(val)
     var min = el.getAttribute("min");
     var max = el.getAttribute("max");
     var portion = (val - min) / (max - min);
     var iel = el.parentNode.querySelector(".range-indicator");
     iel.innerHTML = val + '<span class="range-value"></span>';
     iel.style.left = portion * (el.offsetWidth - 18) + "px";
-    progress.style.width = (el.value / el.max) * 100 + "%";
+    progress.style.width = (el.value / el.max) * 100 - 3 + "%";
 
     renderResult(val);
+
 }
 
 window.addEventListener("scroll", stepCounter);
@@ -113,12 +115,9 @@ function renderResult(val) {
             .forEach((el, i) => {
                 if (el.classList.contains("checked")) {
                     const centData = +el.dataset.cent;
-                   
-
-
-
-                    document.querySelector(".render-number").innerHTML = (val * centData).toFixed(2);
+                    document.querySelector(".render-number").innerHTML = (val * centData).toLocaleString();
                     onHandleACtiveCheckbox(val);
+
                 }
             });
     }
@@ -128,11 +127,11 @@ function renderResult(val) {
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach((el, i) => {
                 if (el.classList.contains("checked")) {
-                    const standardData = el.dataset.standard;
-                   
+                    const standardData = +el.dataset.standard;
 
-                    document.querySelector(".render-number").textContent = val * standardData;
+                    document.querySelector(".render-number").textContent = (val * standardData).toLocaleString();
                     onHandleACtiveCheckbox(val);
+
                 }
             });
     }
@@ -141,21 +140,21 @@ function renderResult(val) {
 function onHandleACtiveCheckbox(val) {
     const btnStandard = document.querySelector(".btn-standard");
     const btnCent = document.querySelector(".btn-cent");
- 
+
     btnCent.addEventListener('click', () => {
         updateCentCounter()
 
         document
-        .querySelectorAll(".partner-program-calculator__list-item-label")
-        .forEach( el => {
-            const centData = +el.dataset.cent
-           
-            if(el.classList.contains('checked')) {
-                document.querySelector(".render-number").textContent = (val * centData).toFixed(2);
-            }
-        } );
- 
-            
+            .querySelectorAll(".partner-program-calculator__list-item-label")
+            .forEach(el => {
+                const centData = +el.dataset.cent
+
+                if (el.classList.contains('checked')) {
+                    document.querySelector(".render-number").textContent = (val * centData).toLocaleString();
+                }
+            });
+
+
 
     })
 
@@ -163,24 +162,26 @@ function onHandleACtiveCheckbox(val) {
         updateStandardCounter()
 
         document
-        .querySelectorAll(".partner-program-calculator__list-item-label")
-        .forEach( el => {
-            if(el.classList.contains('checked')) {
-                document.querySelector(".render-number").textContent = val * el.dataset.standard;
-            }
-        } );
+            .querySelectorAll(".partner-program-calculator__list-item-label")
+            .forEach(el => {
+                if (el.classList.contains('checked')) {
+                    const standardData = el.dataset.standard
+                    document.querySelector(".render-number").textContent = (val * standardData).toLocaleString();
+
+                }
+            });
     })
 
 
-    if(btnStandard.classList.contains('active')){
+    if (btnStandard.classList.contains('active')) {
         document
-        .querySelectorAll(".partner-program-calculator__list-item-label")
-        .forEach((el, i) => {
-            el.addEventListener("click", () => {
-                document.querySelector(".render-number").textContent = val * el.dataset.standard;
+            .querySelectorAll(".partner-program-calculator__list-item-label")
+            .forEach((el, i) => {
+                el.addEventListener("click", () => {
+                    document.querySelector(".render-number").textContent = (val * el.dataset.standard).toLocaleString();
+                });
             });
-        });
- 
+
     }
 
 
@@ -190,7 +191,7 @@ function onHandleACtiveCheckbox(val) {
             .forEach((el, i) => {
                 const centData = +el.dataset.cent
                 el.addEventListener("click", () => {
-                    document.querySelector(".render-number").textContent =(val * centData).toFixed(2);
+                    document.querySelector(".render-number").textContent = (val * centData).toLocaleString();
                 });
             });
     }
@@ -201,10 +202,48 @@ function onHandleACtiveCheckbox(val) {
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach((el, i) => {
                 el.addEventListener("click", () => {
-                    document.querySelector(".render-number").textContent = val * el.dataset.standard;
+                    document.querySelector(".render-number").textContent = (val * el.dataset.standard).toLocaleString();
                 });
             });
     }
 
 
 }
+
+function renderStartNumber(value) {
+    const inputMin = document.querySelector('.range-input').min
+    const btnCent = document.querySelector(".btn-cent");
+
+    document
+        .querySelectorAll(".partner-program-calculator__list-item-label")
+        .forEach(el => {
+
+            if (el.classList.contains('checked')) {
+                const currentTarget = el.dataset.standard
+
+                console.log(currentTarget)
+                document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
+            }
+        });
+
+
+        btnCent.addEventListener('click', ()=>{
+            document
+            .querySelectorAll(".partner-program-calculator__list-item-label")
+            .forEach(el => {
+    
+                if (el.classList.contains('checked')) {
+                    const currentTarget = el.dataset.cent
+    
+                    console.log(currentTarget)
+                    document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
+                }
+            });
+        })
+    
+
+
+}
+
+renderStartNumber()
+
