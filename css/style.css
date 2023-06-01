@@ -1249,4 +1249,7 @@ input[type=range]::-webkit-slider-thumb {
     -moz-column-gap: unset;
          column-gap: unset;
   }
+  .partner-program-calculator-title {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
