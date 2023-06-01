@@ -57,7 +57,6 @@ p {
 video,
 img {
   max-width: 100%;
-  display: block;
   height: auto;
 }
 
@@ -182,7 +181,7 @@ img {
   background-color: #fdfdff;
 }
 
-.bg-text__list, .partner-program-step__list, .partner-program-ib-benefits__list, .partner-program-advantages__list, .partner-program-calculator__list, .partner-program-benefits__list {
+.bg-text__list, .partner-program-step__list, .partner-program-ib-benefits__list, .partner-program-advantages__list, .partner-program-calculator__list, .partner-program-benefits__list, .hero-offer-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -205,6 +204,10 @@ img {
 
 .partner-program-advantages__list-item-body-text, .partner-program-benefits__list-item-body-text, .section-header__desc {
   color: var(--dark-400);
+}
+
+.partner-program {
+  overflow: hidden;
 }
 
 .section-header {
@@ -250,7 +253,7 @@ img {
   content: "";
   width: 32px;
   height: 32px;
-  border: 1px solid #1B8CFF;
+  border: 1px solid #1b8cff;
   border-radius: 50%;
   box-shadow: 7px 12px 30px -10px rgba(65, 65, 65, 0.4);
 }
@@ -283,13 +286,14 @@ img {
 
 .section-header__desc.hero {
   font-size: clamp(0.88rem, 0.71rem + 0.69vw, 1.25rem);
+  margin-bottom: 38px;
 }
 
 .section-header__sub.hero {
   color: var(--green-500);
   text-transform: capitalize;
   padding: 8px 30px;
-  background: #D8F6ED;
+  background: #d8f6ed;
   border-radius: 7px;
 }
 
@@ -297,6 +301,30 @@ img {
   position: absolute;
   bottom: 80px;
   left: 0;
+}
+
+.hero-offer-list {
+  margin-bottom: 38px;
+}
+
+.hero-offer-list__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.hero-offer-list__item-text {
+  font-size: 1rem;
+}
+.hero-offer-list__item-text::before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 27px;
+  height: 27px;
+  margin-right: 25px;
+  border-radius: 50%;
+  background: url("../icons/check.svg"), var(--blue-500);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .gr-circles.benefits {
@@ -328,7 +356,7 @@ img {
 }
 
 .partner-program-benefits-wrapper {
-  background-color: #F9FAFF;
+  background-color: #f9faff;
 }
 
 .partner-program-benefits-wrapper,
@@ -376,12 +404,13 @@ img {
 
 .partner-program-ib {
   padding-top: 150px;
+  padding-bottom: 70px;
 }
 
 .ib-icons {
   position: absolute;
   top: 0;
-  left: 50px;
+  left: 0;
 }
 
 .section-header__title.ib {
@@ -415,11 +444,15 @@ img {
   background-position: center;
 }
 
+.partner-program-calculator {
+  overflow: hidden;
+}
+
 .partner-program-calculator__list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   align-items: center;
-  border: 1px solid #DBDBDB;
+  border: 1px solid #dbdbdb;
 }
 
 .partner-program-calculator__list-item-checkbox {
@@ -455,7 +488,7 @@ img {
 }
 
 .partner-program-calculator__list-item:not(:last-child) {
-  border-right: 1px solid #DBDBDB;
+  border-right: 1px solid #dbdbdb;
 }
 
 .partner-program-calculator-title {
@@ -530,7 +563,7 @@ img {
   left: 0;
   width: 100%;
   height: 5px;
-  background-color: #EDF0FF;
+  background-color: #edf0ff;
   z-index: -2;
 }
 
@@ -541,7 +574,7 @@ img {
   width: 5%;
   height: 5px;
   border-radius: unset;
-  background-color: #42A5F5;
+  background-color: #42a5f5;
   z-index: -1;
 }
 
@@ -557,8 +590,8 @@ input[type=range]::-webkit-slider-thumb {
   height: 35px;
   width: 35px;
   border-radius: 100%;
-  background: #42A5F5;
-  border: 2px solid #FFFFFF;
+  background: #42a5f5;
+  border: 2px solid #ffffff;
   box-shadow: 10px 10px 20px rgba(156, 156, 156, 0.2);
 }
 
@@ -577,7 +610,7 @@ input[type=range]::-webkit-slider-thumb {
   align-items: center;
   justify-content: space-between;
   width: 80%;
-  border: 1px solid #DBDBDB;
+  border: 1px solid #dbdbdb;
   padding: 18px 50px;
   margin-bottom: 25px;
 }
@@ -670,15 +703,15 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .partner-program-advantages__list-item.purple::before {
-  background-color: #9747FF;
+  background-color: #9747ff;
 }
 
 .partner-program-advantages__list-item.cyan::before {
-  background-color: #57F4EB;
+  background-color: #57f4eb;
 }
 
 .partner-program-advantages__list-item.orange::before {
-  background-color: #F9A04E;
+  background-color: #f9a04e;
 }
 
 .partner-program-advantages__list-item.blue::before {
@@ -699,16 +732,24 @@ input[type=range]::-webkit-slider-thumb {
   line-height: 24px;
 }
 
+.owl-carousel-advantages .owl-stage-outer {
+  overflow: unset;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--blue-500);
+}
+
+.partner-program-advantages__list-item {
+  display: grid;
+  grid-template-rows: 57px 130px;
+}
+
 .copy-trade-icons {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.partner-program-copy {
-  position: -webkit-sticky;
-  position: sticky;
-  top: -100px;
 }
 
 .partner-program-ib-benefits {
@@ -741,7 +782,7 @@ input[type=range]::-webkit-slider-thumb {
   align-items: center;
   flex-direction: column;
   padding: 30px 20px;
-  border: 1px solid #EDF0FF;
+  border: 1px solid #edf0ff;
   border-radius: 10px;
 }
 .partner-program-ib-benefits__list-item:hover {
@@ -759,6 +800,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .partner-program-ib-benefits-list-item-text {
   font-size: 0.875rem;
+  line-height: 21px;
   font-weight: 700;
   text-transform: capitalize;
 }
@@ -821,7 +863,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .partner-program-step__list-item.orange::before {
-  background-color: #F9A04E;
+  background-color: #f9a04e;
 }
 
 .partner-program-step__list-item.green::before {
@@ -829,7 +871,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .partner-program-step__list-item.purple::before {
-  background-color: #9747FF;
+  background-color: #9747ff;
 }
 
 .partner-program-step__list-item-img-container {
@@ -880,10 +922,10 @@ input[type=range]::-webkit-slider-thumb {
   }
 }
 .bg-text__list {
-  position: absolute;
-  bottom: 30px;
+  position: relative;
+  bottom: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 363px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   gap: 10px;
   z-index: 1;
@@ -894,4 +936,317 @@ input[type=range]::-webkit-slider-thumb {
   text-transform: uppercase;
   color: rgb(244, 244, 244);
   text-align: center;
+}
+
+@media (max-width: 1198.98px) {
+  .section-header__title.hero {
+    font-size: 40px;
+  }
+  .section-header__desc.hero {
+    font-size: 1rem;
+  }
+  .gr-circles.hero {
+    top: -470px;
+    left: -600px;
+  }
+  .partner-program-benefits__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gr-circles.ib {
+    left: -190px;
+  }
+  .gr-circles-icons.bottom::after {
+    bottom: 125px;
+    right: 350px;
+  }
+  .ib-icons {
+    left: -4px;
+  }
+  .range-result__text {
+    font-size: clamp(1.25rem, 0.44rem + 3.47vw, 3.13rem);
+  }
+  .range-result {
+    grid-template-columns: auto 250px auto;
+  }
+  .ib-benefits-wrapper {
+    grid-template-columns: 400px 1fr;
+  }
+  .section-header__title,
+.partner-program-advantages__header-title,
+.section-header.copy .section-header__title {
+    font-size: 28px;
+  }
+  .bg-text__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 991.98px) {
+  .section-header__title.hero {
+    font-size: 30px;
+  }
+  .hero-offer-list__item-text,
+.section-header__sub.hero,
+.section-header__desc.hero {
+    font-size: 0.875rem;
+  }
+  .section-header__sub.hero {
+    padding: 8px 14px;
+  }
+  .hero-offer-list__item-text::before {
+    margin-right: 10px;
+  }
+  .gr-circles.ib {
+    top: 40%;
+    left: 50%;
+    bottom: unset;
+    transform: translate(-50%, -50%);
+    height: 100%;
+  }
+  .gr-circles.ib .gr-circles-icons.bottom::after {
+    bottom: 560px;
+    right: 150px;
+  }
+  .gr-circles.ib .gr-circles-icons.top::before {
+    left: 410px;
+  }
+  .gr-circles-icons.bottom::after {
+    bottom: unset;
+    top: 800px;
+    right: 170px;
+  }
+  .partner-program-calculator__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .partner-program-calculator__list-item:nth-child(-n+3) {
+    border-bottom: 1px solid #dbdbdb;
+  }
+  .range-result {
+    width: 100%;
+  }
+  .range {
+    margin-bottom: 20px;
+  }
+  .partner-program-calculator-wrapper {
+    margin-bottom: 100px;
+  }
+  .ib-benefits-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .partner-program-ib-benefits__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .partner-program-ib-benefits__list-item:not(:last-child) {
+    margin-right: unset;
+  }
+  .section-header.ib-benefits {
+    margin-bottom: 50px;
+  }
+  .partner-program-advantages__list.display-none {
+    display: none;
+  }
+  .gr-circles.advantages {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .gr-circles-icons.bottom::after {
+    bottom: 0;
+    right: 390px;
+    top: unset;
+  }
+  .bg-text__list,
+.partner-program-step__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    row-gap: 40px;
+  }
+  .bg-text__list-item {
+    height: 395px;
+    width: 340px;
+  }
+  .bg-text__list {
+    position: absolute;
+    top: 55%;
+    bottom: unset;
+  }
+  .section-header.ib {
+    margin-bottom: 0;
+  }
+  .partner-program-ib {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .gr-circles.hero {
+    top: -60px;
+  }
+  .section-header.hero {
+    margin-top: 50px;
+  }
+  .gr-circles.benefits {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .section-header__title.hero {
+    font-size: 50px;
+  }
+  .section-header__desc.hero {
+    font-size: 1rem;
+  }
+  .partner-program-benefits__list-item-header-value {
+    line-height: 1.1;
+  }
+  .partner-program-benefits__list-item:last-child svg {
+    width: 80px;
+    height: 70px;
+  }
+  .range-result {
+    grid-template-columns: 1fr auto;
+  }
+  .bg-text__list,
+.partner-program-step__list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 575.98px) {
+  .section-header {
+    margin-bottom: 30px;
+  }
+  .section-header__desc {
+    line-height: 21px;
+  }
+  .section-padding {
+    padding: 50px 0;
+  }
+  .btn-base-lg {
+    padding: 10px 20px;
+  }
+  .hero-offer-list {
+    text-align: left;
+    margin-inline: auto;
+    max-width: 260px;
+  }
+  .partner-program-benefits__list {
+    grid-template-columns: 1fr;
+  }
+  .gr-circles.hero {
+    top: 16%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+  }
+  .section-header__title.hero {
+    font-size: clamp(1.25rem, 0.44rem + 3.47vw, 3.13rem);
+  }
+  .partner-program-benefits-wrapper {
+    padding: 0 10px;
+    max-width: 374px;
+    margin-inline: auto;
+  }
+  .partner-program-calculator__list.display-none {
+    display: none;
+  }
+  .partner-program-calculator__list {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    background-color: var(--light);
+  }
+  .dropdown .btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+    background-color: var(--blue-500);
+    color: var(--light);
+    box-shadow: 13px 13px 40px rgba(162, 162, 162, 0.2);
+  }
+  .btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+    border: none;
+    outline: none;
+  }
+  .dropdown .btn-secondary {
+    color: var(--dark-500);
+    background: #ffffff;
+    box-shadow: 13px 13px 40px rgba(162, 162, 162, 0.2);
+    border-radius: 31px;
+    padding: 20px 50px;
+    border: none;
+  }
+  .dropdown .btn-secondary svg {
+    margin-left: 20px;
+  }
+  .dropdown-menu.show {
+    display: grid;
+  }
+  .dropdown-menu {
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 13px 13px 40px rgba(162, 162, 162, 0.2);
+    border-radius: 31px;
+  }
+  .dropdown-menu.calculator {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .dropdown-item:nth-child(-n+4) {
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+  }
+  .dropdown-item {
+    padding: 0;
+  }
+  .partner-program-calculator__list-item-label img {
+    width: 30px;
+  }
+  .partner-program-calculator__list-item-label {
+    padding: 25px 10px;
+  }
+  .range-result {
+    padding: 20px;
+  }
+  .range-index {
+    width: unset;
+  }
+  .partner-program-calculator-wrapper {
+    margin-bottom: 80px;
+  }
+  .range-indicator {
+    border-radius: 50%;
+    top: -60px;
+    margin-left: -11px;
+  }
+  .range-indicator::after {
+    bottom: -6px;
+    left: 42%;
+    z-index: -1;
+  }
+  .range-indicator {
+    width: 50px;
+    height: 50px;
+  }
+  .partner-program-ib-benefits__list {
+    grid-template-columns: 1fr;
+  }
+  .dropdown,
+.section-header.hero,
+.partner-program-calculator-title,
+.partner-program-advantages__header {
+    text-align: center;
+  }
+  .section-header__title.ib,
+.section-header.copy .section-header__title,
+.partner-program-advantages__header-title {
+    font-size: 1rem;
+  }
+  .range-result {
+    -moz-column-gap: unset;
+         column-gap: unset;
+  }
 }/*# sourceMappingURL=style.css.map */

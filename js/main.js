@@ -13,18 +13,25 @@ const radios = document.querySelectorAll('input[name="value"]');
 
 function updateRangeSlider(el) {
     var val = el.value;
-    console.log(val)
     var min = el.getAttribute("min");
     var max = el.getAttribute("max");
     var portion = (val - min) / (max - min);
     var iel = el.parentNode.querySelector(".range-indicator");
     iel.innerHTML = val + '<span class="range-value"></span>';
     iel.style.left = portion * (el.offsetWidth - 15) + "px";
- 
-    progress.style.width = (el.value / el.max) * 100  + "%";
+    progress.style.width = (el.value / el.max) * 100 + "%";
 
     renderResult(val);
 
+    const windowWidth = window.innerWidth
+
+    if(windowWidth < 575) {
+     iel.style.left = portion * (el.offsetWidth - 30) + "px"
+    } else {
+         return
+    }
+
+ 
 }
 
 window.addEventListener("scroll", stepCounter);
@@ -155,8 +162,6 @@ function onHandleACtiveCheckbox(val) {
                 }
             });
 
-
-
     })
 
     btnStandard.addEventListener('click', () => {
@@ -173,7 +178,6 @@ function onHandleACtiveCheckbox(val) {
             });
     })
 
-
     if (btnStandard.classList.contains('active')) {
         document
             .querySelectorAll(".partner-program-calculator__list-item-label")
@@ -184,7 +188,6 @@ function onHandleACtiveCheckbox(val) {
             });
 
     }
-
 
     function updateCentCounter() {
         document
@@ -197,7 +200,6 @@ function onHandleACtiveCheckbox(val) {
             });
     }
 
-
     function updateStandardCounter() {
         document
             .querySelectorAll(".partner-program-calculator__list-item-label")
@@ -207,7 +209,6 @@ function onHandleACtiveCheckbox(val) {
                 });
             });
     }
-
 
 }
 
@@ -222,29 +223,28 @@ function renderStartNumber() {
             if (el.classList.contains('checked')) {
                 const currentTarget = el.dataset.standard
 
-                console.log(currentTarget)
                 document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
             }
         });
 
-
-        btnCent.addEventListener('click', ()=>{
-            document
+    btnCent.addEventListener('click', () => {
+        document
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach(el => {
-    
+
                 if (el.classList.contains('checked')) {
                     const currentTarget = el.dataset.cent
-    
+
                     console.log(currentTarget)
                     document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
                 }
             });
-        })
-    
-
+    })
 
 }
 
 renderStartNumber()
 
+ 
+ 
+ 
