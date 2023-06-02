@@ -219,11 +219,21 @@ function renderStartNumber() {
     document
         .querySelectorAll(".partner-program-calculator__list-item-label")
         .forEach(el => {
-
-            if (el.classList.contains('checked')) {
+              
+            el.addEventListener('click', (e)=>{
+                if (el.classList.contains('checked') ) {
+                    const currentTarget = el.dataset.standard
+    
+                    document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
+                    
+                }
+            })
+          
+            if (el.classList.contains('checked') ) {
                 const currentTarget = el.dataset.standard
 
                 document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
+                
             }
         });
 
