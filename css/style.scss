@@ -1353,6 +1353,11 @@ input[type="range"]::-webkit-slider-thumb {
         top: 39%;
     }
 
+
+    .partner-program-ib-benefits__list-item {
+         display: grid;
+         grid-template-columns: 30px 1fr;
+    }
 }
 
  
