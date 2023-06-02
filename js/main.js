@@ -171,19 +171,23 @@ function onHandleACtiveCheckbox(val) {
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach(el => {
                 if (el.classList.contains('checked')) {
-                    const standardData = el.dataset.standard
+                    const standardData = +el.dataset.standard
                     document.querySelector(".render-number").textContent = (val * standardData).toLocaleString();
 
                 }
             });
     })
 
-    if (btnStandard.classList.contains('active')) {
+ 
+ 
+    if ( btnStandard.classList.contains('active')) {
         document
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach((el, i) => {
                 el.addEventListener("click", () => {
-                    document.querySelector(".render-number").textContent = (val * el.dataset.standard).toLocaleString();
+                        document.querySelector(".render-number").textContent = (val * +el.dataset.standard).toLocaleString();
+                    
+                    
                 });
             });
 
@@ -205,22 +209,23 @@ function onHandleACtiveCheckbox(val) {
             .querySelectorAll(".partner-program-calculator__list-item-label")
             .forEach((el, i) => {
                 el.addEventListener("click", () => {
-                    document.querySelector(".render-number").textContent = (val * el.dataset.standard).toLocaleString();
+                    document.querySelector(".render-number").textContent = (val * +el.dataset.standard).toLocaleString();
                 });
             });
     }
-
 }
 
+ 
 function renderStartNumber() {
     const inputMin = document.querySelector('.range-input').value
+    const btnStandard = document.querySelector(".btn-standard");
     const btnCent = document.querySelector(".btn-cent");
 
     document
         .querySelectorAll(".partner-program-calculator__list-item-label")
         .forEach(el => {
               
-            el.addEventListener('click', (e)=>{
+            el.addEventListener('click', ()=>{
                 if (el.classList.contains('checked') ) {
                     const currentTarget = el.dataset.standard
     
@@ -244,8 +249,20 @@ function renderStartNumber() {
 
                 if (el.classList.contains('checked')) {
                     const currentTarget = el.dataset.cent
+ 
+                    document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
+                }
+            });
+    })
 
-                    console.log(currentTarget)
+    btnStandard.addEventListener('click', () => {
+        document
+            .querySelectorAll(".partner-program-calculator__list-item-label")
+            .forEach(el => {
+
+                if (el.classList.contains('checked')) {
+                    const currentTarget = el.dataset.standard
+ 
                     document.querySelector(".render-number").textContent = (inputMin * currentTarget).toLocaleString();
                 }
             });
