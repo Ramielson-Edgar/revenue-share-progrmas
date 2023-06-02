@@ -31,7 +31,7 @@ function updateRangeSlider(el) {
          return
     }
 
- 
+
 }
 
 window.addEventListener("scroll", stepCounter);
