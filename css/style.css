@@ -915,13 +915,13 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 @media (max-width: 1198.98px) {
-  .section-header__title.hero {
+  .section-header__title.hero-revenue {
     font-size: 40px;
   }
-  .section-header__desc.hero {
+  .section-header__desc.hero-revenue {
     font-size: 1rem;
   }
-  .gr-circles.hero {
+  .gr-circles.hero-revenue {
     top: -470px;
     left: -600px;
   }
@@ -957,15 +957,14 @@ input[type=range]::-webkit-slider-thumb {
   }
 }
 @media (max-width: 991.98px) {
-  .section-header__title.hero {
+  .section-header__title.hero-revenue {
     font-size: 30px;
   }
-  .hero-offer-list__item-text,
-.section-header__sub.hero,
-.section-header__desc.hero {
+  .section-header__sub.hero-revenue,
+.section-header__desc.hero-revenue {
     font-size: 0.875rem;
   }
-  .section-header__sub.hero {
+  .section-header__sub.hero-revenue {
     padding: 8px 14px;
   }
   .hero-offer-list__item-text::before {
@@ -1059,10 +1058,10 @@ input[type=range]::-webkit-slider-thumb {
   }
 }
 @media (max-width: 767.98px) {
-  .gr-circles.hero {
+  .gr-circles.hero-revenue {
     top: -60px;
   }
-  .section-header.hero {
+  .section-header.hero-revenue {
     margin-top: 50px;
   }
   .gr-circles.benefits {
@@ -1070,10 +1069,10 @@ input[type=range]::-webkit-slider-thumb {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .section-header__title.hero {
+  .section-header__title.hero-revenue {
     font-size: 50px;
   }
-  .section-header__desc.hero {
+  .section-header__desc.hero-revenue {
     font-size: 1rem;
   }
   .partner-program-benefits__list-item-header-value {
@@ -1104,20 +1103,15 @@ input[type=range]::-webkit-slider-thumb {
   .btn-base-lg {
     padding: 10px 20px;
   }
-  .hero-offer-list {
-    text-align: left;
-    margin-inline: auto;
-    max-width: 260px;
-  }
   .partner-program-benefits__list {
     grid-template-columns: 1fr;
   }
-  .gr-circles.hero {
+  .gr-circles.hero-revenue {
     top: 16%;
     left: 10%;
     transform: translate(-50%, -50%);
   }
-  .section-header__title.hero {
+  .section-header__title.hero-revenue {
     font-size: clamp(1.25rem, 0.44rem + 3.47vw, 3.13rem);
   }
   .partner-program-benefits-wrapper {
@@ -1157,8 +1151,7 @@ input[type=range]::-webkit-slider-thumb {
   .partner-program-ib-benefits__list {
     grid-template-columns: 1fr;
   }
-  .dropdown,
-.section-header.hero,
+  .section-header.hero-revenue,
 .partner-program-calculator-title,
 .partner-program-advantages__header {
     text-align: center;
