@@ -279,17 +279,17 @@ img {
   z-index: 2;
 }
 
-.section-header__title.hero {
+.section-header__title.hero-revenue {
   font-size: clamp(1.25rem, 0.44rem + 3.47vw, 3.13rem);
   line-height: 1.1;
 }
 
-.section-header__desc.hero {
+.section-header__desc.hero-revenue {
   font-size: clamp(0.88rem, 0.71rem + 0.69vw, 1.25rem);
   margin-bottom: 38px;
 }
 
-.section-header__sub.hero {
+.section-header__sub.hero-revenue {
   color: var(--green-500);
   text-transform: capitalize;
   padding: 8px 30px;
@@ -297,7 +297,7 @@ img {
   border-radius: 7px;
 }
 
-.partner-program-hero__img-container .hero-icons {
+.partner-program-hero__img-container .revenue-icons {
   position: absolute;
   bottom: 80px;
   left: 0;

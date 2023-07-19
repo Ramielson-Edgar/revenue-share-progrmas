@@ -343,17 +343,17 @@ img {
     z-index: 2;
 }
 
-.section-header__title.hero {
+.section-header__title.hero-revenue {
     font-size: $font-size-50-20;
     line-height: 1.1;
 }
 
-.section-header__desc.hero {
+.section-header__desc.hero-revenue {
     font-size: $font-size-20-14;
     margin-bottom: 38px;
 }
 
-.section-header__sub.hero {
+.section-header__sub.hero-revenue {
     color: var(--green-500);
     text-transform: capitalize;
 
@@ -362,7 +362,7 @@ img {
     border-radius: 7px;
 }
 
-.partner-program-hero__img-container .hero-icons {
+.partner-program-hero__img-container .revenue-icons {
     position: absolute;
     bottom: 80px;
     left: 0;
@@ -606,10 +606,7 @@ img {
     margin-left: -8px;
 }
 
-//  .range-indicator.active {
-//     transform: scale(0.9);
-//     transform-origin: bottom;
-//  }
+ 
 
 .range-input {
     -webkit-appearance: none;
@@ -1368,7 +1365,6 @@ input[type="range"]::-webkit-slider-thumb {
     }
 }
 
- 
 @media (max-width:375.98px) {
     .partner-program-calculator__list-item-label {
         position: relative;

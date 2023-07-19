@@ -5,9 +5,9 @@ const tl =  gsap.timeline({default :{
 }})
 
 
-gsap.to(".hero-icons",{
+gsap.to(".revenue-icons",{
     scrollTrigger: {
-        trigger: ".hero-icons",
+        trigger: ".revenue-icons",
         scrub: 1,
     },
     y:50,
